@@ -134,8 +134,6 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
-
-
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
@@ -157,3 +155,24 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+document.getElementById("whatsappForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent default form submission
+
+  // Get form input values
+  const fullname = document.querySelector('input[name="fullname"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  const phone = document.querySelector('input[name="phone"]').value;
+  const message = document.querySelector('textarea[name="message"]').value;
+
+  // Construct the WhatsApp message with line breaks
+  const whatsappMessage = `Hello, my name is ${fullname}.\nMy email is ${email}.\nMy phone number is ${phone}.\nHere is my message: ${message}.`;
+
+  // WhatsApp API link (replace YOUR_PHONE_NUMBER with the target phone number)
+  const whatsappURL = `https://wa.me/917373604355?text=${encodeURIComponent(whatsappMessage)}`;
+
+  // Open WhatsApp chat in a new tab
+  window.open(whatsappURL, "_blank");
+});
+
