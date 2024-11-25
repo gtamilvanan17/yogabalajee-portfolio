@@ -166,8 +166,18 @@ document.getElementById("whatsappForm").addEventListener("submit", function (e) 
   const phone = document.querySelector('input[name="phone"]').value;
   const message = document.querySelector('textarea[name="message"]').value;
 
-  // Construct the WhatsApp message with line breaks
-  const whatsappMessage = `Hello, my name is ${fullname}.\nMy email is ${email}.\nMy phone number is ${phone}.\nHere is my message: ${message}.`;
+  // Construct the WhatsApp message with conditional email and phone
+  let whatsappMessage = `Hello, my name is: ${fullname}.`;
+
+  if (email) {
+    whatsappMessage += `\nMy email is: ${email}.`;
+  }
+
+  if (phone) {
+    whatsappMessage += `\nMy phone number is: ${phone}.`;
+  }
+
+  whatsappMessage += `\nI am writing this to: ${message}.`;
 
   // WhatsApp API link (replace YOUR_PHONE_NUMBER with the target phone number)
   const whatsappURL = `https://wa.me/917373604355?text=${encodeURIComponent(whatsappMessage)}`;
