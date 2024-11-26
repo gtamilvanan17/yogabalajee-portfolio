@@ -868,6 +868,131 @@ main {
 }
 
 
+
+
+/* new skilss */
+
+
+
+.card-align {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamic grid layout */
+  gap: 40px 10px; /* Spacing between the cards */
+  justify-content: center; /* Centers the grid if extra space is available */
+}
+
+.size {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.container-skills .card-skills {
+  position: relative;
+  max-width: 150px;
+  height: 100px;
+  background-color: #fff;
+  margin: 0 auto; /* Centers the card */
+  padding: 10px 7.5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 6.5px 10px 10px 0px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.container-skills .card-skills:hover {
+  height: 150px;
+}
+
+.container-skills .card-skills .image-skills {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  top: -20%;
+  left: 4px;
+  box-shadow: 0 2.5px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.container-skills .card-skills .image-skills img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.container-skills .card-skills .content-skills {
+  position: relative;
+  top: -70px;
+  padding: 5px 7.5px;
+  color: #111;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.container-skills .card-skills:hover .content-skills {
+  margin-top: 48px;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.01s;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1250px) {
+  .card-align {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for slightly smaller cards */
+  }
+}
+
+@media (max-width: 1024px) {
+  .card-align {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust grid for tablets */
+  }
+  .container-skills .card-skills {
+    max-width: 180px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-align {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller cards for smaller tablets */
+  }
+}
+
+@media (max-width: 580px) {
+  .card-align {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* 2 cards per row */
+  }
+  .container-skills .card-skills {
+    max-width: 140px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 450px) {
+  .card-align {
+    grid-template-columns: 1fr; /* Single card per row for small screens */
+  }
+  .container-skills .card-skills {
+    max-width: 100%;
+    height: auto; /* Adjust height for single-column layout */
+  }
+}
+
+
+
+
+
+/* new skilss */
+
+
+
+
+
+
+
+
 /**
  * skills 
  */
